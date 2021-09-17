@@ -1,0 +1,23 @@
+<!-- <p>edit-task works!</p>
+<div class="container">
+    <input type="text" value="{{Title}}" #x1>
+    <button class="btn btn-primary btn-sm" (click)="update(x1.value)">edit</button>
+</div> -->
+
+<!-- value="{{brandname}}" -->
+
+<div class="container">
+    <label>Title:</label>
+    <input type="text" class="form-control" value="{{Title}}" #x1 /><br>
+    <label>Description:</label>
+    <textarea class="form-control" value="{{Description}}" #x2></textarea>
+    <select #x3>
+        <option>Please Select Status</option>
+        <option value="1">Open</option>
+        <option value="2" disabled>In-Progress</option>
+        <option value="3" disabled>Completed</option>
+    </select>
+    <br>
+    <button (click)="edit_task(x1.value,x2.value,x3.value)">edit</button>
+    
+</div>

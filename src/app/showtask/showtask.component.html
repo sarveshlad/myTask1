@@ -1,0 +1,52 @@
+<!-- <div class="container">
+    {{result}}
+<div class="row">
+    <div *ngFor="let ans of result">
+        <div *ngIf="ans.status==1" class="col-md-4" style="border:solid">
+            <span draggable [dragData]="ans.title">{{ans.title}}</span>
+        </div>
+        <div class="col-xl-4">    
+        <div style="border:solid"  *ngIf="ans.status==2" (onDrop)="onItemDrop($event)" class="col-md-4" droppable>
+            <li class="list-group-item" *ngFor="let ans of droppedItems" >{{ans}}</li>
+            
+        </div>
+        </div>
+        <div style="border:solid" *ngIf="ans.status==3" class="col-md-4">
+            {{ans.title}}
+        </div>
+    </div>
+    </div>
+</div> -->
+
+ <div class="row">
+    <div class="col-xl-4" >
+<div class="listdraggable list-group"><p>Open</p>
+    <span class="list-group-item" *ngFor="let ans of result" (onDrag)="onItemDrag($event)" draggable  [dragData]="ans.title" [attr.for]="ans.title+'#'+ans.description+'#'+ans.status+'#'+ans.datetime+'#'+ans.id">{{ans.title}}
+        <a href="/edit-task/{{ans.id}}">edit</a>
+    </span>
+</div>
+ </div>
+  <div class="col-xl-4">    
+  <div class ="listdroppable list-group" (onDrop)="onItemDrop($event)" droppable>
+    <p>In-Progress</p>
+    
+    <li class="list-group-item" *ngFor="let ans of progress" >{{ans}}</li>
+  
+  </div>    
+  
+</div>
+<div class="col-xl-4">    
+    <div class ="listdroppable list-group" (onDrop)="onItemDropComplete($event)" droppable>
+      <p>Completed</p>
+      
+      <li class="list-group-item" *ngFor="let ans of complete" >{{ans}}</li>
+    
+    </div>    
+    
+  </div>
+</div> 
+   
+
+
+  
+  
