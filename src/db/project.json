@@ -3,7 +3,7 @@
     {
       "title": "Angular",
       "description": "Task1 start",
-      "status": "2",
+      "status": "3",
       "datetime": "1631888779090",
       "id": 1
     },
@@ -17,14 +17,14 @@
     {
       "title": "TASK3",
       "description": "TASK START",
-      "status": "2",
+      "status": "3",
       "datetime": "1631794152031",
       "id": 3
     },
     {
       "title": "TASK4",
       "description": "Task 4 start",
-      "status": "2",
+      "status": "3",
       "datetime": "1631794158893",
       "id": 4
     }

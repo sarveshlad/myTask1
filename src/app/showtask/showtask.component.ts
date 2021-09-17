@@ -54,11 +54,20 @@ console.log(e.target);
    
     // 
     console.log("drg data "+e.dragData);
+    //console.log(e.dragData,"hello word");
+    console.log(e,"hello word");
     console.log(this.progress)
-   
+   //this.result.filter((m)=>())
     console.log(this.result);
-   
-    this.result.splice(this.result.indexOf(e.dragData),1);
+    let inde;
+    for(let i=0;i<this.result.length;i++){
+      if(this.result[i].title==e.dragData){
+      inde=i;
+      }
+    }
+    
+    this.result.splice(inde,1);
+    console.log(this.result.indexOf(e.dragData),"hey")
       console.log(this.result);
     
   //console.log(e);
@@ -93,11 +102,12 @@ console.log(e.target);
   public complete:any=[];
   onItemDropComplete(e:any) {
     this.complete.push(e.dragData);
-    var position=this.result.indexOf(e.dragData);
-     this.result.splice(position,1);
-      console.log(this.result);
+    //var position=this.result.indexOf(e.dragData);
+    //  this.result.splice(position,1);
+      console.log(this.result,"pro");
     console.log(e.dragData);
     console.log(this.complete);
+
     localStorage.setItem("status","3");
     var obj={
       title:localStorage.getItem("title"),
@@ -109,6 +119,15 @@ datetime:localStorage.getItem("datetime"),
 id:localStorage.getItem("id")
     }
     console.log(obj)
+    
+    let inde;
+    for(let i=0;i<this.result.length;i++){
+      if(this.result[i].title==e.dragData){
+      inde=i;
+      }
+    }
+    
+    this.result.splice(inde,1);
     //console.log("collection name");
     //console.log(`task?id=${obj.id}`,obj);
     
